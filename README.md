@@ -1,0 +1,1 @@
+# this projest is a simple project that lets you fill out a survey and when you submit youre sent to a different page where your the information you displayed shows up and it is also added to the database
