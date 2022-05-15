@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Dojos Survey</title>
+</head>
+<body>
+    <form action="/create/dojo" method="post" class="col-5 mx-auto bg-dark p-5 my-2 text-light" >
+        {% with messages = get_flashed_messages() %}     
+        {% if messages %}                            
+            {% for message in messages %}            
+                <p>{{message}}</p>                   
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+        <h1 class="text-center text-primary">Dojo Survey</h1>
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" name="name" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="location">Dojo Location:</label>
+            <select name="location" class="form-control">
+                <option value="">-- Select A Location --</option>
+                <option value="New York City">New York City</option>
+                <option value="Los Angeles">Los Angeles</option>
+                <option value="Dallas">Dallas</option>
+                <option value="Chicago">Chicago</option>
+                <option value="Orlando">Orlando</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="langauge">Favorite Language:</label>
+            <select name="language" class="form-control">
+                <option value="">-- Select A Language --</option>
+                <option value="HTML">HTML</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Python">Python</option>
+                <option value="C#">C#</option>
+                <option value="Java">Java</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="comment" class="form-label">Comment:</label>
+            <textarea name="comment" class="form-control" rows="10"></textarea>
+        </div>
+            <input type="submit" class="btn btn-warning btn-outline-dark" value="Submit">
+    </form>
+    
+
+</body>
+</html>
